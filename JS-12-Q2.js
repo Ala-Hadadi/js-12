@@ -4,15 +4,11 @@
 // todo-3:call the innerFunc in the outerFunc.
 
 // !Answer:
-const innerFunc = (num1, num2) => {
-    return num1 * num2;
+function outerFunc(x) {
+  return function innerFunc(y) {
+    return x * y;
   };
-  
-  const outerFunc = (a, b) => {
-    return innerFunc(a, b);
-  };
-  
+}
 
-  const result = outerFunc(8, 2);
-  console.log(result); 
-  
+const num = outerFunc(10);
+console.log(num(5));

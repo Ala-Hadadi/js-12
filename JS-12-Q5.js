@@ -11,3 +11,15 @@
 // note: obj.counterString("Hello world how are you?")==>[ 5, 5, 3, 3, 4 ]
 
 // !Answer:
+let object = {
+    string: "Hello world how are you?",
+    
+    counterString: function() {
+      const words = this.string.split(" ");
+      const length = words.map(word => word.length);
+      return length;
+    }
+  };
+
+  console.log(object.counterString()); 
+  
